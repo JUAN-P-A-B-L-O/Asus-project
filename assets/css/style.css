@@ -1,0 +1,625 @@
+
+/* Resetando css */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+   
+}
+
+
+/* Só pra ter rolagem suave, lembrar de mudar id para outros htmls */
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+/* Salvando config com uso repetido*/
+:root
+
+
+/* body */
+
+body{
+    
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(54, 54, 54), rgba(190, 190, 190, 0.575), rgb(95, 95, 95), black);
+    background-attachment: fixed;
+}
+
+/* Estilizando header */
+.cabecalho{
+    background-image: linear-gradient(to right, rgb(214, 208, 208), white, white, white);
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 5vh;
+    border-radius: 10px;
+    /* box-shadow: 0 0 1em rgb(2, 63, 143); */
+    box-shadow: 0 0 1em rgb(227, 239, 255);
+    overflow: hidden;
+    z-index: 1;
+    height: 10vh;
+}
+
+
+
+/* Evitar que o menu corte quando a altura ta mt pequena */
+
+@media(max-height: 700px){
+    .cabecalho{
+        height: auto;
+    }
+}
+
+
+
+header div {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    padding: 10px;
+}
+
+
+.logo-a{
+    cursor: default;
+}
+
+nav a{
+    font-size: 1.4em;
+    border-radius: 5px;
+    padding: 0.5em;
+    padding-bottom: 1.1em;
+    
+}
+ul{
+    display: flex;
+    list-style: none;
+}
+
+/* Formatando o menu para resposividade */
+
+
+.fantasma{
+    display: none;
+}
+
+
+.menu-responsivo{
+    display: none;
+}
+.menu-responsivo label{
+    cursor: pointer;
+}
+
+#menu-resp{
+    display: none;
+}
+
+
+@media (max-width:600px){
+
+    /* header div nav{
+        display: none;
+    } */
+    header div{
+        justify-content: center;
+        height: 10vh;
+    }
+    
+    .menu-responsivo{
+         display: block; 
+    }
+    .menu-links{
+        position: fixed;
+        top: 10vh;
+        width: 60%;
+        background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(54, 54, 54), rgba(190, 190, 190, 0.993), rgb(95, 95, 95), black);
+        /* display: none; */
+        height: 100vh;
+        border-radius: 20px;
+        padding-top: 20%;
+    left: 0;
+
+    }
+    .menu-links ul{
+        display: flex;
+        flex-direction: column;
+    }
+    .menu-links ul li{
+        width: 60%;
+        background-color: rgb(226, 223, 223);
+        margin: 2%;
+        border: 1px solid rgb(0, 0, 0);
+        display: block;
+        border-radius: 10px;
+        font-size: 0.7em;
+    }
+    
+
+    .fantasma{
+        display: block;
+    }
+    #menu-resp:checked ~ .menu-links{
+        display: none;
+
+        top: 50%;
+    }
+}
+
+
+
+
+
+
+
+/* Background inicial */
+
+.background1{
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* text-align: center; */
+    padding-bottom: 2%;
+    max-width: 1100px;
+    min-width: 280px;
+    min-height: 358px;
+
+
+    margin: auto;
+
+}
+
+
+/* Animacaozinha pra barra */
+h1::after{
+    content: "|";
+    margin: 2%;
+    opacity: 1;
+    animation: anima-barrinha 2s infinite;
+}
+
+@keyframes anima-barrinha {
+    0% {
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* /////////// voltando pro background */
+
+
+ .background2{
+    align-items: center;
+    display: flex;
+    margin: auto;
+    height: 40%;
+    text-shadow: 0.01em 0.05em 0.1em rgb(0, 0, 0);
+    text-align: center;
+
+    /* color: rgb(82, 82, 82); */
+}
+.background2 section{
+    width: 33%;
+}
+.background1 img{
+    width: 100%;
+    filter: drop-shadow(10px 5px 15px rgba(255, 255, 255, 0.25));
+    
+}
+.background3{
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding-top: 2%;
+}
+.background3 form{
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+
+}
+
+.background3 button, input{
+    padding: 1em;
+}
+.background3 button{
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+
+}
+input{
+    width: 60%;
+}
+
+
+
+/* Formatando background */
+@media (max-width: 600px){
+    /* .h1-part2{display: none;} */
+    .background2 {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    .background2 img{
+        width: 30%;
+        margin: auto;
+    }
+   
+}
+@media(max-height:800px){
+    .background1{
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        padding-top: 15vh;
+
+    }
+    
+    .background1 h1{
+        font-size: large;
+    }
+    .background1 img{
+        width: 30%;
+    }
+}
+@media(max-height:625px){
+    .background1{
+        padding-top: 25vh;
+    }
+}
+
+
+/* TEM Q RESOLVER A ALTURA RESPONVISA */
+
+
+
+
+/* Configurando conteudo principal */
+
+main{
+    margin-top: 0px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 280px;  
+
+    /* largura minina nos celulas antigos em p é 320px, mas tem que usar abaixo
+     disso por tem margins e paddings na page */
+    margin: auto;
+    
+    /* Background */
+    
+}
+
+main h1{
+    color: rgb(255, 255, 255);
+}
+.main h2 a{
+    color: rgb(138, 138, 138);
+    
+}
+
+
+.sec{
+    display: flex;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+}
+.sec div{
+    flex-grow: 0;
+    /* background-color: saddlebrown;
+    border: 2px solid pink; */
+    text-align: center;
+}
+.sec div p{
+    text-align: center;
+}
+
+
+
+.two{
+    display: block;
+    background-image: linear-gradient(to right,black, rgb(54, 54, 54), rgb(54, 54, 54), rgba(190, 190, 190, 0.751), rgb(95, 95, 95),rgb(80, 79, 79),black);
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.slide{
+    max-width: 1100px;
+    margin: auto;
+ 
+}
+
+
+
+/* FAZENDO O ELEMENTO IMG FICAR RESPONSIVEL */
+main section  img{
+    width: 100%;
+}
+
+
+
+/* Formatando main */
+
+@media (max-width: 500px){
+    main section, .flex{
+        flex-wrap: wrap;
+    }
+    .sli{
+        flex-wrap: initial;
+    }
+}
+
+
+
+
+
+
+/* Auxiliar das animacoes de aparecendo na rolagem */
+
+[data-animacao]{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+[data-animacao="direita"]{
+    transform: translate3d(1.2em, 0, 0);
+}
+
+[data-animacao="esquerda"]{
+    transform: translate3d(-1.2em, 0, 0);
+}
+
+[data-animacao].animando{
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+}
+.invisivel{
+    opacity: 0;
+}
+
+
+
+
+
+/* COonfigurando os slides */
+
+
+
+
+
+.geral_slide{
+    max-width: 800px;
+    margin: auto;
+    /* border: 2px solid green; */
+    overflow: hidden;
+    /* height: 600px; */
+    display: flex;
+    margin-bottom: 2%;
+    height: 70vh;
+}
+.geral_slide input{
+    display: none;
+}
+.geral_slide div{
+    width: 40%;
+    margin: 2%;
+    transition: 1s;
+}
+.geral_slide div im{
+    width: 100%;
+    height: 70vh;
+}
+
+.navegandoSlides{
+    display: flex;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    padding: auto;
+    justify-content: center;
+}
+.navegandoSlides label{
+    height: 1.7vh;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 3vw;
+    margin: 4%;
+    display: block;
+    transition: 0.5s;
+}
+.navegandoSlides label:hover{
+    cursor: pointer;
+    background-color: rgb(230, 230, 240);
+
+}
+
+#slideA:checked ~ .pri{
+    width: 4000vw;
+
+}
+#slideB:checked ~ .pri2{
+    width: 4000vw;
+
+}
+#slideC:checked ~ .pri3{
+    width: 4000vw;
+
+}
+#slideD:checked ~ .pri4{
+    width: 4000vw;
+
+}
+#slideE:checked ~ .pri5{
+    width: 4000vw;
+}
+
+
+#slideA:checked ~ .labelA{
+    background-color: white;
+
+}
+
+@media(max-width: 840px){
+    .geral_slide{
+        height: 40vh;
+    }
+}
+@media(max-height:730px){
+    .geral_slide{
+        margin-bottom: 10%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Configurando footer */
+
+footer{
+    border-top: 2px solid rgb(117, 116, 116);
+    background-image: linear-gradient(to bottom, rgb(61, 61, 61), black);
+    width: 100%;
+    color: white;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    min-width: 280px;
+}
+
+
+footer p{
+    font-size: small;
+}
+
+footer a{
+    color: rgb(138, 138, 138);
+}
+footer a:hover{
+    color: rgba(85, 85, 241, 0.692);
+}
+
+
+
+
+
+
+
+.info-lingua, .geral{
+    display: flex;
+    
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    
+}
+.info-lingua{
+    margin-top: 2%;
+    padding-top: 1%;
+    border-top: 0.1px solid rgba(255, 255, 255, 0.445);
+    align-items: center;
+}
+
+
+.geral{
+    padding-top: 2%;
+}
+.geral div{
+    width: 33%;
+}
+
+.social{
+    display: flex;
+}
+.social img{
+    width: 65%;
+}
+
+
+
+
+
+
+/* Configurando resposta ao click em produtos */
+.pop{
+    position: fixed;
+    display: none;
+    top: 20%;
+    left: 20%;
+    background-color: white;
+    border: 2px solid rgb(105, 98, 98);
+    border-radius: 20px;
+    padding: 4%;
+    /* text-align: center; */
+    z-index: 3;
+    width: 40vw;
+    margin: auto;
+    background-image: linear-gradient(35deg, white, gray );
+    
+}
+.pop p{
+    width: 100%;
+}
+.pop form{
+    margin-top: 15%;
+    border-top: 1px solid gray;
+}
+.pop input{
+    display: block;
+    border: none;
+    border-radius: 10px;
+}
+.pop button{
+    margin-top: 4%;
+    width: 100%;
+    background-image: linear-gradient(35deg, white, gray );
+    border-radius: 10px;
+    padding: 1.5em;
+    cursor: pointer;
+}
+.popAparecendo{
+    display: block;
+}
+.pop .quit{
+    width: 5%;
+    margin-bottom: 5%;
+    padding: 0.4em;
+    cursor: pointer;
+}
